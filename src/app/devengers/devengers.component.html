@@ -1,0 +1,23 @@
+<!-- aqui onde vai ser implementado a lista de gestores -->
+<h2>Lista de gestores</h2>
+<ul class="gestores">
+    <li *ngFor="let gestor of gestores" [class.selected]="gestor === selectedGestor" (click)="onSelect(gestor)">
+
+        <span class="badge">{{gestor.id}}</span> {{gestor.name}}
+    </li>
+</ul>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedGestor.name | uppercase}} Details</h2>
+    <div><span>id: </span> {{selectedGestor.id}}</div>
+    <div><span>number: </span> {{selectedGestor.number}}</div>
+    <div><span>email: </span> {{selectedGestor.email}}</div>
+
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedGestor.name" placeholder="name"/>
+        </label>
+    </div>
+
+
+</div>
